@@ -1,0 +1,28 @@
+:root {
+    --color-light: #F9FEFF;
+    --color-dark: #232E21;
+    --color-pop: #F5F749;
+    --color-neutral: #87919E;
+}
+
+body {
+    min-height: 100vh;
+    background: url('../images/SCP-background.jpg') no-repeat center;
+    background-size: cover;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background: var(--color-neutral);
+    width: 100%;
+    margin-top: 50px;
+}
+
+.home-header-text {
+    color: var(--color-light);
+}
+
+.col-form-label label{
+    color: var(--color-light);
+}
