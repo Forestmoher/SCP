@@ -1,0 +1,42 @@
+[
+  {
+    "model": "Archive.ObjectClass",
+    "pk": 1,
+    "fields": {
+      "class_name": "Safe",
+      "class_description": "Safe-class SCPs are anomalies that are easily and safely contained."
+    }
+  },
+  {
+    "model": "Archive.ObjectClass",
+    "pk": 2,
+    "fields": {
+      "class_name": "Euclid",
+      "class_description": "Euclid-class SCPs are anomalies that require more resources to contain completely or where containment isn't always reliable."
+    }
+  },
+   {
+    "model": "Archive.ObjectClass",
+    "pk": 3,
+    "fields": {
+      "class_name": "Keter",
+      "class_description": "Keter-class SCPs are anomalies that are exceedingly difficult to contain consistently or reliably, with containment procedures often being extensive and complex."
+    }
+  },
+   {
+    "model": "Archive.ObjectClass",
+    "pk": 4,
+    "fields": {
+      "class_name": "Thaumiel",
+      "class_description": "Thaumiel-class SCPs are anomalies that the Foundation uses to contain or counteract other SCPs or anomalous phenomena."
+    }
+  },
+   {
+    "model": "Archive.ObjectClass",
+    "pk": 5,
+    "fields": {
+      "class_name": "Apollyon",
+      "class_description": "Used for SCPs that are impossible to contain, or are about to irrevocably break containment. An SCP with this class will inevitably end the world."
+    }
+  }
+]
