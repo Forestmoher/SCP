@@ -1,0 +1,19 @@
+{% extends "Archive/Archive_base.html"%}
+
+{% load static %}
+
+{% block title %} Items List {% endblock %}
+
+{% block content %}
+
+<h1 class="header-text">Item List</h1>
+<hr>
+<ul>
+    {% for item in items %}
+    <li>
+        <a href="">{{item}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
