@@ -8,7 +8,7 @@ def home(request):
 
 
 def create_item(request):
-    form = ItemForm(request.POST or None, request.FILES or None)
+    form = ItemForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()

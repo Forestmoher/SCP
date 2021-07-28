@@ -14,7 +14,7 @@ class Item(models.Model):
     object_class = models.ForeignKey(ObjectClass, on_delete=models.CASCADE)
     containment_procedure = models.CharField(max_length=250)
     code_name = models.CharField(max_length=100)
-    item_image = models.ImageField(upload_to='Archive/static/Archive/images/item_images')
+    item_image = models.CharField(max_length=500)
 #   add in location along with location model
 
     objects = models.Manager()
