@@ -1,0 +1,17 @@
+{% extends "Archive/Archive_base.html"%}
+
+{% load static %}
+
+{% block title %}SCP-{{number}}{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center header-text">Are you sure you'd like to delete SCP-{{item.item_name}}?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Confirm Delete" class="btn btn-outline-danger">
+    <a href="{% url 'Archive_item_detail' item.id %}" class="btn btn-outline-light"> Cancel </a>
+</form>
+
+
+{% endblock %}

@@ -7,9 +7,14 @@
 
 body {
     min-height: 100vh;
+    position: relative;
     background: url('../images/SCP-background.jpg') no-repeat center;
     background-size: cover;
     color: var(--color-light);
+}
+
+.shell {
+    padding-bottom: 2.5rem;
 }
 
 footer {
@@ -18,12 +23,23 @@ footer {
     background: var(--color-neutral);
     width: 100%;
     margin-top: 50px;
+    height: 2.5rem;
 }
 
 .header-text {
     color: var(--color-light);
 }
 
-li {
-    color: var(--color-light);
+
+table {
+    background-color: var(--color-light);
+    border-radius: 8px;
+}
+
+td,th {
+    padding: 5px 10px;
+}
+
+ul {
+    list-style-type: none;
 }

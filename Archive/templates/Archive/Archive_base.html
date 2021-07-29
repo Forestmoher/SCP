@@ -27,22 +27,28 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'Archive_create' %}">Add Item</a>
       </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'Archive_object_classes' %}">Object Classes</a>
+      </li>
     </ul>
   </div>
 </nav>
 <!--End Navbar-->
 
 <!--Body content -->
-<div class="container py-5">
-    {% block content %} {% endblock %}
+<div class="shell">
+    <div class="container py-5">
+        {% block content %} {% endblock %}
+    </div>
 </div>
+
 
 <!--End content-->
 
 <!--Footer-->
 
-<footer class="page-footer font-small">
-  <div class="footer-copyright text-center py-3">© 2021 Copyright: SCP Foundation
+<footer class="footer mt-5 py-2">
+  <div class="text-center">© 2021 Copyright: SCP Foundation
   </div>
 </footer>
 <!--End Footer-->

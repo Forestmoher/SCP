@@ -1,0 +1,39 @@
+{% extends "Archive/Archive_base.html"%}
+
+{% load static %}
+
+{% block title %}Object Classes{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center header-text">Object Classes</h1>
+<div class="container">
+    <table class="table table-dark table-striped">
+        <tr>
+            <th>
+                Class Name
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+        {% for object in objects %}
+        <tr>
+            <td>
+                {{object.class_name}}
+            </td>
+            <td>
+                {{object.class_description}}
+            </td>
+        </tr>
+      {% endfor %}
+    </table>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
