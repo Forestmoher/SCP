@@ -1,0 +1,44 @@
+{% extends "Archive/Archive_base.html"%}
+
+{% load static %}
+
+{% block title %}SCP-{{number}}{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center header-text">SCP-{{number}}</h1>
+<div class="d-flex flex-row flex-wrap justify-content-between">
+    <div class="col-md pb-3 px-0 mx-2">
+        <ul class="list-group card">
+            <li class="card-header text-center text-white bg-dark">
+                Object Class:
+            </li>
+            <li class="list-group-item">
+                <a href="{% url 'Archive_object_classes' %}">{{ object_class }}</a>
+            </li>
+            <li class="card-header text-center text-white bg-dark">
+                Special Containment Procedures:
+            </li>
+            <li class="list-group-item">
+                 {{ containment }}
+            </li>
+        </ul>
+    </div>
+    <div class="card col-md py-3 mx-2">
+        <img  alt="{{ name }}" src="{{ image }}" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text">
+                Code Name: {{ name }}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="float-right pt-2 pb-5">
+    <a href="{% url 'Archive_delete_item' pk %}" class="btn btn-outline-danger">Delete</a>
+    <a href="{% url 'Archive_update_item' pk %}" class="btn btn-outline-light">Update</a>
+</div>
+.
+
+
+{% endblock %}

@@ -10,8 +10,8 @@
 <hr>
 <ul>
     {% for item in items %}
-    <li>
-        <a href="">{{item}}</a>
+    <li class="py-2">
+        <a href="{% url 'Archive_item_detail' item.id %}" class="btn btn-outline-light">{{item}}</a>
     </li>
     {% endfor %}
 </ul>
