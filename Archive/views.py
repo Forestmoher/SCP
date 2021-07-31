@@ -29,6 +29,7 @@ def item_detail(request, pk):
                'pk': item.pk,
                'object_class': item.object_class,
                'containment': item.containment_procedure,
+               'description': item.item_description,
                'name': item.code_name,
                'image': item.item_image
                }
