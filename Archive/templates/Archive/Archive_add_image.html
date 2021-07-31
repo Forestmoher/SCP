@@ -1,0 +1,17 @@
+{% extends "Archive/Archive_base.html"%}
+
+{% load static %}
+
+{% block title %} API Call {% endblock %}
+
+{% block content %}
+
+<h1>API Call</h1>
+
+{% for x in image_list %}
+
+<img width=300px height=300px src="{{x}}" alt="">
+
+{% endfor %}
+
+{% endblock %}

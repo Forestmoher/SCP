@@ -12,6 +12,14 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button type="submit" class="btn btn-outline-light">Create Item</button>
+    <a href="{% url 'Archive_add_image' %}" class="btn btn-outline-light">Search Images</a>
 </form>
+
+{% for x in image_list %}
+
+<img src="{{x}}" alt="">
+
+{% endfor %}
+
 
 {% endblock %}

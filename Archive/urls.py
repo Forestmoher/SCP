@@ -9,5 +9,6 @@ urlpatterns = [
     path('details/<int:pk>', views.item_detail, name='Archive_item_detail'),
     path('delete/<int:pk>', views.delete_item, name='Archive_delete_item'),
     path('update/<int:pk>', views.update_item, name='Archive_update_item'),
+    path('addImage', views.image_search, name='Archive_add_image'),
 ]
 
