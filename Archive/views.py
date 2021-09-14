@@ -3,19 +3,58 @@ from .forms import ItemForm
 from .models import Item, ObjectClass
 import http.client
 import json
+from imgurpython import ImgurClient
 
 
 def home(request):
     return render(request, 'Archive/Archive_home.html')
 
 
-def create_item(request):
-    form = ItemForm(request.POST or None)
+def add_item(request):
+    if 'item' in request.GET:
+        item = request.GET['item']
+    # if request.method == 'POST':
+    #     item = 'item'
+        print(item)
+        return redirect('Archive_create', item)
+    return render(request, 'Archive/Archive_add_item.html')
+
+
+def create_item(request, item):
+    print(item)
+    initial_data = {'item_number': item}
+    form = ItemForm(request.POST or None, initial=initial_data)
+
+    client_id = '969773c5986034e'
+    client_secret = 'cae7c12ea772c950b27a6a7e3b799649d0a65017'
+
+    client = ImgurClient(client_id, client_secret)
+
+    items = client.gallery()
+    for item in items:
+        print(item.link)
+
+    # conn = http.client.HTTPSConnection("contextualwebsearch-websearch-v1.p.rapidapi.com")
+    #
+    # headers = {
+    #     'x-rapidapi-key': "8d08802391msh53283cf56cf01e7p13f93bjsn5ffc452d06e6",
+    #     'x-rapidapi-host': "contextualwebsearch-websearch-v1.p.rapidapi.com"
+    # }
+    # conn.request("GET",
+    #              "/api/Search/ImageSearchAPI?q=SCP3000&pageNumber=1&pageSize=10&autoCorrect=true",
+    #              headers=headers)
+    #
+    #
+    # res = conn.getresponse()
+    # data = res.read().decode("utf-8")
+    # json_data = json.loads(data)
+    #
+    # image_list = []
+    # for key in json_data['value']:
+    #     image_list.append(key['url'])
+    # print(image_list)
     if request.method == 'POST':
         if form.is_valid():
-            item_number = form.cleaned_data['item_number']
-            request.session['item_number'] = item_number
-            request.session.modified = True
             form.save()
             return redirect('Archive_add_image')
     context = {'form': form}
